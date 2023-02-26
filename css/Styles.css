@@ -1,66 +1,73 @@
-* body{
-    color: whitesmoke;
-    background-color: #20262e;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+body{
+    background-color: darkslategray;
+    align-content: center;
 }
 
-h1, h2, h3{
-    color: #953d91;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+.top-container{
+    position: relative;
+    background-color: linear-gradient (#913175, #213565);
 }
 
-a{
-    color: greenyellow;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.mid-container {
+    background-color: #913175;
 }
 
-ol li{
-    color: bisque;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 1.1em;
+.bot-container {
+    height: 500px;
+    background-color: linear-gradient (#913175, #213565);
 }
 
-hr{
-    border-color: #cd5888;
-    height: 10px;
-    width: 75%;
-    border-style: dotted none none none;
-    border-width: 10px;
-    /* border-top-width: 6px; */
+.rubiks-top{
+    width: 180px;
+    position: absolute;
+    bottom: 500px;
+    left: 500px;
 }
 
-#FistLine {
-    border-style: solid;
+.name{
+    position: relative;
+    bottom: 500px;
+    font-size: 100px;
+    color: darkcyan;
+    background-color: aliceblue;
+    display: inline-block;
+    padding:  5px 30px;
+    border-radius: 40px;
 }
 
-.DashBorder{
-    border-style: dashed;
-    border-color: #953d91;
+.subtitle{
+    position: relative;
+    bottom: 640px;
+    font-size: 25px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 800px;
+    color: blueviolet;
 }
 
-.DottedBorder{
-    border-style: dotted;
-    border-color: #953d91;
-    height: 10px;
-    border-width: 3px;
+.gameplay{
+    text-decoration: underline;
 }
 
-.FilledTable{
-    background-color: #cd5888;
-    width: 40%;
-    padding: 8px;
+.sun{
+    display: block;
+    margin: 0 auto;
 }
 
-.FilledTable td {
-    color: powderblue;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+.skill-row{
+    display: inline-block;
+    width: 70px 100px;
 }
 
-.ReducedTables{
-    width: 60%;
-    height: 80%;
+.skill1-img{
+    width: 100px;
 }
 
-td{
-    text-align: center;
+.skill2-img {
+    width: 100px;
 }
+
+.skill3-img {
+    width: 100px;
+}
+
+/* Tarea: */
