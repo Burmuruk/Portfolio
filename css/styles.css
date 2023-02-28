@@ -2,9 +2,10 @@ body {
     background-color: black;
     color: white;
     margin: 0;
-    /* background-repeat: repeat-x; */
+    background-repeat: repeat;
     /* background-position: center -10%; */
-    background-size: 30% 20%;
+    background-size: 100% 800px;
+    text-align: center;
 }
 
 a {
@@ -16,16 +17,100 @@ h1 {
 }
 
 .content {
+    /* box-sizing: border-box; */
     width: 80%;
+    height: 100%;
     padding: 30px;
     border-width: 2px;
     border-color: blue;
-    background-color: green;
-    position: absolute;
+    background-color: #0e0418ea;
+    position: relative;
     left: 5%;
-    height: 100%;
+    text-align: left;
 }
 
 .halfInfo {
-    width: 50%;
+    /* width: 50%; */
+    /* padding: 0 20px 0 0; */
+}
+
+#cellContent{
+    padding: 0 50px 0 0;
+}
+
+.boldText{
+    font-weight: bold;
+}
+
+hr{
+    border-width: 2px;
+    border-style: none none dashed none;
+    height: 5px;
+}
+
+.img-tetrominos{
+    /* width: 200px ; */
+    margin: 0 50px;
+}
+
+.tetrisPiece{
+    position: relative;
+    display: block;
+    border-style: inset;
+    border-width: 3px;
+    width: 50px;
+    height: 50px;
+}
+
+.tetris{
+    margin: 50px 200px;
+}
+
+.tetris-i{
+    display: block;
+    background-color: aqua;
+}
+
+.tetris-j{
+    position: relative;
+    display: inline-block;
+    background-color: blue;
+}
+
+.tetris-l {
+    position: relative;
+    display: block;
+    background-color: orange;
+}
+
+.tetris-o {
+    position: static;
+    display: inline-block;
+    background-color: yellow;
+}
+
+.tetris-s {
+    position: relative;
+    display: inline-block;
+    background-color: green;
+}
+
+.tetris-t {
+    position: static;
+    display: inline-block;
+    background-color: yellow;
+}
+
+.tetris-z {
+    position: relative;
+    display: inline-block;
+    background-color: red;
+}
+
+ol{
+    list-style: decimal;
+}
+
+li a{
+    text-decoration: underline;
 }
