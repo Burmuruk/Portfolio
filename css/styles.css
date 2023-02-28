@@ -1,0 +1,31 @@
+body {
+    background-color: black;
+    color: white;
+    margin: 0;
+    /* background-repeat: repeat-x; */
+    /* background-position: center -10%; */
+    background-size: 30% 20%;
+}
+
+a {
+    color: cyan;
+}
+
+h1 {
+    margin: 0;
+}
+
+.content {
+    width: 80%;
+    padding: 30px;
+    border-width: 2px;
+    border-color: blue;
+    background-color: green;
+    position: absolute;
+    left: 5%;
+    height: 100%;
+}
+
+.halfInfo {
+    width: 50%;
+}
