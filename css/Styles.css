@@ -1,35 +1,51 @@
 body{
-    background-color: darkslategray;
-    align-content: center;
+    margin: 0;
+    background-color: #20262E;
+    text-align: center;
+    color: aliceblue;
+}
+
+h1{
+    margin: 0;
 }
 
 .top-container{
     position: relative;
-    background-color: linear-gradient (#913175, #213565);
+    background: linear-gradient(#913175, #20262E);
 }
 
 .mid-container {
     background-color: #913175;
+    background: #20262E
 }
 
 .bot-container {
     height: 500px;
-    background-color: linear-gradient (#913175, #213565);
+    background: #20262E
 }
 
 .rubiks-top{
     width: 180px;
     position: absolute;
-    bottom: 500px;
-    left: 500px;
+    bottom: 70%;
+    /* left: 500px; */
+    /* top: 50px; */
+    right: 5%;
+}
+
+.rubiks-bot{
+    width: 180px;
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
 }
 
 .name{
     position: relative;
-    bottom: 500px;
+    bottom: 800px;
     font-size: 100px;
     color: darkcyan;
-    background-color: aliceblue;
+    background-color: #E9E8E8BB;
     display: inline-block;
     padding:  5px 30px;
     border-radius: 40px;
@@ -37,11 +53,11 @@ body{
 
 .subtitle{
     position: relative;
-    bottom: 640px;
+    bottom: 800px;
     font-size: 25px;
-    font-family: 'Ubuntu', sans-serif;
+    /* font-family: 'Ubuntu', sans-serif; */
     font-weight: 800px;
-    color: blueviolet;
+    color: #20262E;
 }
 
 .gameplay{
@@ -51,23 +67,18 @@ body{
 .sun{
     display: block;
     margin: 0 auto;
+    /* height: 90%;
+    width: 90%; */
 }
 
 .skill-row{
     display: inline-block;
-    width: 70px 100px;
+    margin: 70px 50px;
 }
 
-.skill1-img{
+.skill1-img, .skill2-img, .skill3-img{
     width: 100px;
-}
-
-.skill2-img {
-    width: 100px;
-}
-
-.skill3-img {
-    width: 100px;
+    /* margin-right: 50px; */
 }
 
 /* Tarea: */
