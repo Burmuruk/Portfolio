@@ -1,0 +1,7 @@
+.myFooter{
+    background-color: rgb(30, 108, 147);
+}
+
+.myFooter * {
+    background-color: rgb(30, 108, 147);
+}
