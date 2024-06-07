@@ -11,6 +11,14 @@
     <link href="css/footer.css" rel="stylesheet">
 
     <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
       .b-example-divider {
         width: 100%;
         height: 3rem;
@@ -42,7 +50,11 @@
           </div>
           <div class="col-lg-6">
             <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Santoyo Herrera David</h1>
-            <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+            <p class="lead">Estudiante de Desarrollo y Programación de Videojuegos en noveno semestre. El lenguaje con más dominio acutalmente es C#, pero también sabe usar otros como C++, java, html, javascript, entre otros.
+            </p>
+            <p class="lead">
+              Mi enfoque principal es la programación para desarrollo de mecánicas, combate o herramientas. Hay muchas cosas que no se, pero siempre estoy enusiasmado por aprender y buscar más de ello.
+            </p>
             <div class="d-grid gap-2 d-md-flex justify-content-md-start">
             </div>
           </div>
@@ -53,7 +65,7 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb breadcrumb-custom overflow-hidden text-center bg-body-tertiary border rounded-4">
             <li class="breadcrumb-item">
-              <a class="link-body-emphasis fw-semibold text-decoration-none text-light" href="#">
+              <a class="link-body-emphasis fw-semibold text-decoration-none text-light" href="#" onclick="return showCV()">
                 Curriculum
               </a>
             </li>
@@ -74,8 +86,13 @@
       <div class="b-example-divider"></div>
 
       <div id="sectionsContainer">
-        <div id="DemoReelSection" class="section d-flex justify-content-center embed-responsive embed-responsive-4by3" style="display: none;">
-          <video class="embed-responsive-item" controls>
+
+        <div id = "cvSection" style="margin: auto; width: 80%; height: 80%;">
+          <embed src="documents/Currículum.pdf" frameborder="0" style="width: 100%; height: 800px">
+        </div>
+
+        <div id="DemoReelSection" class="section d-flex justify-content-center embed-responsive embed-responsive-16by9" style="width: 100%;;">
+          <video class="embed-responsive-item" controls style="width: 80%;">
             <source src="Videos/DemoReel.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
@@ -83,17 +100,18 @@
     
         <div id="projectsSection" class="album py-5 bg-body-tertiary">
           <div class="container">
-      
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
               <div class="col">
                 <div class="card shadow-sm">
-                  <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                  <span class="bd-placeholder-img card-img-top" width="100%" height="225" style="background-color: rgb(85, 89, 92);">
+                    <image src="img/DSHSelfie1.jpg" style="width: 100%; height: 100%;"></image>
+                  </span>
                   <div class="card-body">
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="btn-group">
                         <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                        <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
                       </div>
                       <small class="text-body-secondary">9 mins</small>
                     </div>
@@ -102,13 +120,15 @@
               </div>
               <div class="col">
                 <div class="card shadow-sm">
-                  <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                  <span class="bd-placeholder-img card-img-top" width="100%" height="225" style="background-color: rgb(85, 89, 92);">
+                    <image src="img/DSHSelfie1.jpg" style="width: 100%; height: 100%;"></image>
+                  </span>
                   <div class="card-body">
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="btn-group">
                         <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                        <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
                       </div>
                       <small class="text-body-secondary">9 mins</small>
                     </div>
@@ -117,52 +137,51 @@
               </div>
               <div class="col">
                 <div class="card shadow-sm">
-                  <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                  <span class="bd-placeholder-img card-img-top" width="100%" height="225" style="background-color: rgb(85, 89, 92);">
+                    <image src="img/DSHSelfie1.jpg" style="width: 100%; height: 100%;"></image>
+                  </span>
                   <div class="card-body">
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary" onclick= "return openProject(0)">View</button>
+                        <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
                       </div>
                       <small class="text-body-secondary">9 mins</small>
                     </div>
                   </div>
                 </div>
               </div>
-      
             </div>
           </div>
         </div>
       </div>
 
+      <div class="b-example-divider"></div>
+
       <div class="container">
-        <footer class="py-4  myFooter">
-          <!-- <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Features</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Pricing</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-light">FAQs</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-light">About</a></li>
-          </ul> -->
+        <footer class="py-4  myFooter border rounded-4">
           <ul class="nav justify-content-center border-bottom pb-3 mb-3">
             <li class="ms-3as">
-              <a class="text-body-secondary">
+              <a class="text-body-secondary" href="https://www.linkedin.com/in/david-santoyo-herrera-59a0b020a">
                 <img src="img/LinkedIn_logo.png" height="25px" width="25px"></img>
               </a>
             </li>
             <li class="ms-3">
-              <a class="text-body-secondary" href="img/LinkedIn_logo.png">
-                <img src="img/LinkedIn_logo.png" height="25px" width="25px"></img>
+              <a class="text-body-secondary" href="https://burmuruk.itch.io">
+                <img src="img/Itch.io_logo.svg.png" height="25px" width="90px"></img>
               </a>
             </li>
-            <li class="ms-3">
-              <a class="text-body-secondary" href="img/LinkedIn_logo.png">
+            <!-- <li class="ms-3">
+              <a class="text-body-secondary" href="">
                 <img src="img/LinkedIn_logo.png" height="25px" width="25px"></img>
               </a>
-            </li>
+            </li> -->
           </ul>
-          <p class="text-center text-light">santoyo.herrera.david@gmail.com</p>
+          <p class="text-center text-light">santoyo.herrera.david@gmail.com
+            <br>
+            +52 5523291197
+          </p>
         </footer>
       </div>
 
