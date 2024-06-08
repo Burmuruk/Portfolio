@@ -1,0 +1,13 @@
+// $primary: #f2f0ea;
+
+@import "../node_modules/bootstrap/scss/_functions";
+@import "../node_modules/bootstrap/scss/_variables";
+
+$project-theme-colors: (
+    "pLight": #f2f0ea,
+    "pSecondary": #1b6b6b
+);
+
+$theme-colors: map-merge($project-theme-colors, $theme-colors);
+
+@import '../node_modules/bootstrap/scss/bootstrap';
