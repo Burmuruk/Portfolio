@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mundo Procedural</title>
+    <title>The Way</title>
     <link href="../css/main.min.css" rel="stylesheet" >
     <link href="../css/heroes.css" rel="stylesheet">
     <link href="../css/breadcrumbs.css" rel="stylesheet">
@@ -58,7 +58,7 @@
           <hr class="border border-pSecondary border-2" style="width: 100%;">
         </div>
         <p class="lead py-5 fw-bold fs-1 text-center text-pSecondary" style="width: 50%;">
-          Mundo Procedural
+          The Way
         </p>
         <div class="d-flex align-items-center" style="width: 20%">
           <hr class="border border-pSecondary border-2" style="width: 100%;">
@@ -71,51 +71,57 @@
         </p>
         
         <p class="text-pSecondary">
-          Herramienta que permite generar mundos procedurales mediante piezas modulares.
+          Juego 2D realizado por una equipo de 4 personas durante un game jam. En el juego tomas el papel de dos xoloitzcuitles en su camino al Mictlán.
+          Deberás de encontrar la salida en cada uno de los acertijos que ambos continúen con su viaje.
+        </p>
+
+        <p class="text-pSecondary">
+            Después del tiempo límite se terminarón los movimientos y se generó una herramienta para que la persona ecargada del diseño pudiera 
+            hacer diferentes escenarios libremente.
         </p>
 
         <br>
         <p class="h5 fw-bold text-pSecondary text-body-pSecondary">
-          Funcionamiento
-        </p>
-
-        <br>
-        <p class="h6 fw-semibold text-pSecondary">
-          Sistema procedural
-        </p>
-
-        <br>
-        <p class="text-pSecondary">
-          Desde el editor de Unity es posible establecer probabilidades de que piezas pueden ir juntas. De igual manera, se pueden estableceer zonas (conjunto de piezas)
-          con una serie de estructuras u otros elementos que se pueden encontrar ahí.
-          La forma y el tamaño de las zonas también pueden ser modificados.
-        </p>
-
-        <br>
-        <p class="h6 fw-semibold text-pSecondary">
-          Caminos y estructuras
+          Contribución
         </p>
         <p class="text-pSecondary">
-          Estos dos elementos se dejaron fuera del sistema para ser colocados manualmente. Solo se pueden colocar estas piezas si la relación estre ambas fué definida en el
-          inspector. Al ponerla, se analizan las piezas de su al rededor para definir si es necesario cambiarla, rotarla o modificarla para obtener un
-          mejor acoplamiento.
+          Programación del movimiento y habilidades de los personajes, recoger monedas, hacer daño, y el desarrollo de la herramienta.
         </p>
 
         <br>
         <p class="h5 fw-bold text-pSecondary text-body-pSecondary">
-          Nota
-        </p>
-        <p class="text-pSecondary">
-          Solo se permite utlizar un número máximo de piezas al mismo tiempo, por esta razón, al moverse sobre el escenario se van tomando nuevas piezas de un "pool" general o 
-          se mofican las texturas para poder reutilizarlas.
-        </p>
+            Funcionalidades de la herramienta
+          </p>
+          <p class="text-pSecondary">
+            <ul>
+                <li class="text-pSecondary">
+                    Clasificación de sprites por catergoría.
+                </li>
+                <li class="text-pSecondary">
+                    Colocar sprites del mismo tipo de manera aleatoria.
+                </li>
+                <li class="text-pSecondary">
+                    Reducción de cajas de colisión al combinarse con otras de la misma categoría.
+                </li>
+                <li class="text-pSecondary">
+                    Guardado en scriptable objects.
+                </li>
+                <li class="text-pSecondary">
+                    Pausar físicas y reubicar personajes para probar el nivel mientras se crea.
+                </li>
+                <li class="text-pSecondary">
+                    Dibujar líneas y rellenas áreas.
+                </li>
+            </ul>
+          </p>
+
         <div id="carouselExampleCaptions" class="carousel slide mx-auto d-block" style="width: 60%;">
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            <!-- <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button> -->
           </div>
 
           <br>
@@ -123,38 +129,38 @@
 
           <div class="carousel-inner border rounded-4">
             <div class="carousel-item active">
-              <img src="../img/WgTop.png" class="d-block w-100" alt="...">
+              <img src="../img/Tw.png" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
                 <!-- <h5>First slide label</h5>
                 <p>Some representative placeholder content for the first slide.</p> -->
               </div>
             </div>
-            <div class="carousel-item">
-              <img src="../img/WgNavigationPath.png" class="d-block w-100" alt="...">
+            <!-- <div class="carousel-item">
+              <img src="../img/TwNGrid.png" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
-                <!-- <h5>Second slide label</h5>
-                <p>Some representative placeholder content for the second slide.</p> -->
+                <h5>Second slide label</h5>
+                <p>Some representative placeholder content for the second slide.</p>
               </div>
-            </div>
+            </div> -->
             <div class="carousel-item">
-              <img src="../img/WgPieces.png" class="d-block w-100" alt="...">
+              <img src="../img/TwWColliders.png" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
                 <!-- <h5>Third slide label</h5>
                 <p>Some representative placeholder content for the third slide.</p> -->
               </div>
             </div>
             <div class="carousel-item">
-              <img src="../img/WgClose.png" class="d-block w-100" alt="...">
+              <img src="../img/TwColliders.png" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
-                <!-- <p>Demostración en escenario grande.</p> -->
+                <h5>Reducción de cajas de colisión.</h5>
               </div>
             </div>
-            <div class="carousel-item">
-              <img src="../img/WgCharPath.png" class="d-block w-100" alt="...">
+            <!-- <div class="carousel-item">
+              <img src="../img/NmBcTD.png" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
-                <!-- <p>Demostración en escenario grande.</p> -->
+                <p>Demostración en escenario grande.</p>
               </div>
-            </div>
+            </div> -->
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -199,6 +205,20 @@
           <!-- <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
         </div>
         <div class="offcanvas-body d-flex align-items-start">
+          <a class="card mt-2 text-decoration-none mx-4" style="max-width: 450px;" href="../pages/proceduralWorld.html">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="../img/WgClose1.png" alt="..." class="img-fluid rounded-start">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Mundo procedural</h5>
+                  <p class="card-text">Herramienta para general mundo procedural con piezas modulares.</p>
+                </div>
+              </div>
+            </div>
+          </a>
+
           <a class="card mt-2 text-decoration-none mx-4" style="max-width: 450px;" href="../pages/navMesh.html">
             <div class="row g-0">
               <div class="col-md-4">
@@ -212,23 +232,8 @@
               </div>
             </div>
           </a>
-
-          <a class="card mt-2 text-decoration-none" style="max-width: 450px;" href="../pages/theWay.html">
-            <div class="row g-0 ">
-              <div class="col-md-4">
-                <img src="../img/Tw1.png" alt="..." class="img-fluid rounded-start">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">The Way</h5>
-                  <p class="card-text">Videojuego 2D y herramienta para generación de niveles.</p>
-                </div>
-              </div>
-            </div>
-          </a>
-          </div>
         </div>
-      </div>
+    </div>
 
     </main>
   </body>

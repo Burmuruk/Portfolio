@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Santoyo Herrera David</title>
+    <title>Navegación</title>
     <link href="../css/main.min.css" rel="stylesheet" >
     <link href="../css/heroes.css" rel="stylesheet">
     <link href="../css/breadcrumbs.css" rel="stylesheet">
@@ -72,7 +72,7 @@
         
         <p class="text-pSecondary">
           Herramienta para navegación en escenarios 3d. Crea una malla de navegación en la zona indicada por la que
-          los personajes pueden navegar libremente sin tener colisiones con objetos de la capa indicada. Implementa A* y Dijkstra, y 
+          los personajes pueden navegar libremente sin tener colisiones con objetos de la capa indicada. Implementa A*, Dijkstra y 
           tiene una interfaz genérica para añadir más algoritmos.
         </p>
 
@@ -94,8 +94,8 @@
         </p>
         <p class="text-pSecondary">
           Se utilizan varios raycast para detectar los objetos en el área de acuerdo a las dimensiones del jugador, el ángulo de
-          inclinación de las superficies y la densidad de la misma. Los resultados se guardan como arreglo dentro del Scriptable 
-          Object seleccionado.
+          inclinación de las superficies y la densidad de esta. Los resultados se guardan como arreglo dentro del Scriptable 
+          Object inidicado.
         </p>
 
         <br>
@@ -103,12 +103,12 @@
           Movimiento
         </p>
         <p class="text-pSecondary">
-          Mediante métodos asíncronos y busquedas binarias, se ejecutan los algoritmos de busqueda y se guardan las rutas de Movimiento
-          en IEnumerables para una fácil lectura.
+          Mediante métodos asíncronos y busquedas binarias, se ejecutan los algoritmos de busqueda y se guardan las rutas de movimiento
+          en IEnumerables para una lectura fácil.
         </p>
         <p class="text-pSecondary">
-          Hay dos modos de movimiento, por aproximación y por precisión, donde el primero se encarga de verificar que el destino final esté
-          dentro del área transitable y si no, se regresa la posición más cercana.
+          Cuando se quiere mover a un punto en específico, hay dos modos de movimiento, por aproximación y por precisión, donde el primero se encarga de verificar que el destino final esté
+          dentro del área transitable y si no, se regresa la posición más cercana. El segundo trata de conseguir el punto de la malla más cercano.
         </p>
 
         
@@ -232,7 +232,7 @@
             </div>
           </a>
 
-          <a class="card mt-2 text-decoration-none" style="max-width: 450px;" href="../pages/proceduralWorld.html">
+          <a class="card mt-2 text-decoration-none" style="max-width: 450px;" href="../pages/theWay.html">
             <div class="row g-0 ">
               <div class="col-md-4">
                 <img src="../img/Tw1.png" alt="..." class="img-fluid rounded-start">
