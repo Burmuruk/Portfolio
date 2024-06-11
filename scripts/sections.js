@@ -12,8 +12,8 @@ function SaveSections(){
     
     document.getElementById("sectionsContainer").removeChild(projectsSection);
     document.getElementById("sectionsContainer").removeChild(curriculumSection);
-    document.getElementById("sectionsContainer").removeChild(videoSection);
-    // currentElement = videoSection;
+    // document.getElementById("sectionsContainer").removeChild(videoSection);
+    currentElement = videoSection;
 }
 
 function showDemoReel(){
