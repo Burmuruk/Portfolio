@@ -58,7 +58,7 @@
           <hr class="border border-pSecondary border-2" style="width: 100%;">
         </div>
         <p class="lead py-5 fw-bold fs-1 text-center text-pSecondary" style="width: 50%;">
-          NavMesh
+          RPG Starter Template (Tesis)
         </p>
         <div class="d-flex align-items-center" style="width: 20%">
           <hr class="border border-pSecondary border-2" style="width: 100%;">
@@ -66,22 +66,13 @@
       </div>
 
       <div class="container my-5 bg-pLight">
-      <p class="h5 fw-bold text-pSecondary text-body-pSecondary">
-          Rol
-        </p>
-        
-        <p class="text-pSecondary">
-          Game Developer
-        </p>  
-      
-      <p class="h5 fw-bold text-pSecondary text-body-pSecondary">
+        <p class="h5 fw-bold text-pSecondary text-body-pSecondary">
           Descripción
         </p>
         
         <p class="text-pSecondary">
-          Herramienta para navegación en escenarios 3d. Crea una malla de navegación en la zona indicada por la que
-          los personajes pueden navegar libremente sin tener colisiones con objetos de la capa indicada. Implementa A*, Dijkstra y 
-          tiene una interfaz genérica para añadir más algoritmos.
+          Herramienta diseñada para agilizar la creación de un juego tipo RPG en Unity. Incluye una arquitectura básica extensible para el juego 
+          y herramientas de editor para configurar personajes, estadísticas y más.
         </p>
 
 
@@ -106,35 +97,6 @@
           la build del proyecto.
         </p>
 
-        <br>
-        <p class="h6 fw-semibold text-pSecondary">
-          Movimiento
-        </p>
-        <p class="text-pSecondary">
-          Mediante métodos asíncronos y busquedas binarias, se ejecutan los algoritmos de busqueda y se guardan las rutas de movimiento
-          en IEnumerables para una lectura fácil.
-        </p>
-        <p class="text-pSecondary">
-          Cuando se quiere mover a un punto en específico, hay dos modos de movimiento, por aproximación y por precisión, donde el primero se encarga de verificar que el destino final esté
-          dentro del área transitable y si no, se regresa la posición más cercana. El segundo trata de conseguir el punto de la malla más cercano.
-        </p>
-
-        
-        <br>
-        <p class="h5 fw-bold text-pSecondary text-body-pSecondary">
-          Tiempo de creación de malla
-        </p>
-        <p class="text-pSecondary">
-          Mallas de navegación con 1,000,000 de nodos se generan en 12s.
-        </p>
-
-        <br>
-        <p class="h5 fw-bold text-pSecondary text-body-pSecondary">
-          Nota
-        </p>
-        <p class="text-pSecondary">
-          El resultado gráfico de la malla es opcional, pero para mostrarlo se utilizan gameobjects y "OnDrawGizmos" para hacerlo posible. Este
-          proceso es muy tardado por lo que se recomienda usar solo en áreas pequeñas.
         </p>
         <div id="carouselExampleCaptions" class="carousel slide mx-auto d-block" style="width: 60%;">
           <div class="carousel-indicators">
@@ -150,38 +112,27 @@
 
           <div class="carousel-inner border rounded-4">
             <div class="carousel-item active">
-              <img src="../img/NmDCFar.png" class="d-block w-100" alt="...">
+              <img src="../img/RPGCreation.png" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
                 <!-- <h5>First slide label</h5>
                 <p>Some representative placeholder content for the first slide.</p> -->
               </div>
             </div>
             <div class="carousel-item">
-              <img src="../img/NmDCMid.png" class="d-block w-100" alt="...">
+              <img src="../img/RPGNavigation.png" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
                 <!-- <h5>Second slide label</h5>
                 <p>Some representative placeholder content for the second slide.</p> -->
               </div>
             </div>
             <div class="carousel-item">
-              <img src="../img/NmDCClose.png" class="d-block w-100" alt="...">
+              <img src="../img/RPGDialogues.png" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
                 <!-- <h5>Third slide label</h5>
                 <p>Some representative placeholder content for the third slide.</p> -->
               </div>
             </div>
-            <div class="carousel-item">
-              <img src="../img/NmBcTDCreated.png" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <!-- <p>Demostración en escenario grande.</p> -->
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="../img/NmBcTD.png" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <!-- <p>Demostración en escenario grande.</p> -->
-              </div>
-            </div>
+            
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
