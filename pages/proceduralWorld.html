@@ -1,235 +1,111 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mundo Procedural</title>
-    <link href="../css/main.min.css" rel="stylesheet" >
-    <link href="../css/heroes.css" rel="stylesheet">
-    <link href="../css/breadcrumbs.css" rel="stylesheet">
+<!DOCTYPE html>
 
-    <style>
-      .b-example-divider {
-        width: 100%;
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Terreno procedural | David Santoyo Herrera</title>
+<meta content="Generación de mundos con piezas modulares, zonas configurables y reutilización de objetos." name="description"/>
+<script src="../scripts/theme.js">
+</script>
+<link href="../css/site.css" rel="stylesheet"/>
+<script defer="" src="../scripts/translations.js"></script><script defer="" src="../scripts/site.js"></script></head>
+<body id="inicio">
+<a class="skip" href="#main">Saltar al contenido</a>
+<header class="site-header wrap">
+<a class="brand" href="../index.html">DAVID SANTOYO<span>.</span>
+</a>
+<nav aria-label="Navegación principal" class="site-nav">
+<a href="../index.html#inicio">Inicio</a>
+<a href="../index.html#projectsSection">Proyectos</a>
+<a href="../index.html#DemoReelSection">Demo Reel</a>
+<a data-cv="" data-root="../" href="../documents/Curriculum.pdf">CV</a>
+<a href="../index.html#contacto">Contacto</a>
+<button aria-label="Switch to English" class="language-toggle" data-language-toggle="" lang="en" type="button">EN</button><button aria-label="Cambiar tema" aria-pressed="false" class="theme-toggle" data-theme-toggle="">☾</button>
+</nav>
+</header>
+<main class="wrap" id="main">
+<header class="project-header">
+<p class="breadcrumb">
+<a href="../index.html#projectsSection">← Todos los proyectos</a>
+</p>
+<p class="eyebrow">Generación de escenarios</p>
+<h1>Terreno procedural</h1>
+<p class="project-intro">Generación de mundos con piezas modulares, zonas configurables y reutilización de objetos.</p>
+<div class="tags">
+<span>Unity</span>
+<span>C#</span>
+</div>
+</header>
+<div class="project-layout"><details class="project-switcher" data-project-switcher="" open=""><summary>☰ Proyectos</summary><nav aria-label="Otros proyectos" class="project-menu"><a href="RPGStarterTemplate.html"><img alt="" aria-hidden="true" height="44" loading="lazy" src="../img/optimized/RPGProfile.webp" width="60"/><span>RPG Starter Template</span></a><a href="navMesh.html"><img alt="" aria-hidden="true" height="44" loading="lazy" src="../img/optimized/NmDCFar1.webp" width="60"/><span>Sistemas de navegación</span></a><a aria-current="page" href="proceduralWorld.html"><img alt="" aria-hidden="true" height="44" loading="lazy" src="../img/optimized/WgClose1.webp" width="60"/><span>Terreno procedural</span></a><a href="theWay.html"><img alt="" aria-hidden="true" height="44" loading="lazy" src="../img/optimized/Tw1.webp" width="60"/><span>The Way</span></a></nav><aside aria-label="En esta página" class="project-outline">
+<a href="#detalle">Descripción y desarrollo</a>
+<a href="#galeria">Imágenes del proyecto</a>
+<a href="../index.html#DemoReelSection">Ver demo reel ↗</a>
+</aside></details>
 
-      .navbar {
-        margin-bottom: 20px;
-      }
-
-      .myFooter{
-        background-color: rgb(242, 240, 234);
-      }
-
-      .myFooter * {
-        background-color: rgb(242, 240, 234);
-      }
-
-    </style>
-  </head>
-  <body class="bg-pLight">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-    <nav class="navbar navbar-expand-lg navbar-pLight bg-pLight" aria-label="Tenth navbar example">
-      <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-  
-        <div class="collapse navbar-collapse justify-content-md-left" id="navbarsExample08">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active text-pSecondary fs-4" aria-current="page" href="../index.html">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-pSecondary fs-4" data-bs-toggle="offcanvas" href="#offcanvasTop" role="button">Projectos</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-      <div class="container my-5 d-flex justify-content-center bg-pLight">
-        <div class="d-flex align-items-center" style="width: 20%">
-          <hr class="border border-pSecondary border-2" style="width: 100%;">
-        </div>
-        <p class="lead py-5 fw-bold fs-1 text-center text-pSecondary" style="width: 50%;">
-          Mundo Procedural
-        </p>
-        <div class="d-flex align-items-center" style="width: 20%">
-          <hr class="border border-pSecondary border-2" style="width: 100%;">
-        </div>
-      </div>
-
-      <div class="container my-5 bg-pLight">
-        <p class="h5 fw-bold text-pSecondary text-body-pSecondary">
-          Descripción
-        </p>
-        
-        <p class="text-pSecondary">
-          Herramienta que permite generar mundos procedurales mediante piezas modulares.
-        </p>
-
-        <br>
-        <p class="h5 fw-bold text-pSecondary text-body-pSecondary">
-          Funcionamiento
-        </p>
-
-        <br>
-        <p class="h6 fw-semibold text-pSecondary">
-          Sistema procedural
-        </p>
-
-        <br>
-        <p class="text-pSecondary">
-          Desde el editor de Unity es posible establecer probabilidades de que piezas pueden ir juntas. De igual manera, se pueden estableceer zonas (conjunto de piezas)
-          con una serie de estructuras u otros elementos que se pueden encontrar ahí.
-          La forma y el tamaño de las zonas también pueden ser modificados.
-        </p>
-
-        <br>
-        <p class="h6 fw-semibold text-pSecondary">
-          Caminos y estructuras
-        </p>
-        <p class="text-pSecondary">
-          Estos dos elementos se dejaron fuera del sistema para ser colocados manualmente. Solo se pueden colocar estas piezas si la relación estre ambas fué definida en el
-          inspector. Al ponerla, se analizan las piezas de su al rededor para definir si es necesario cambiarla, rotarla o modificarla para obtener un
-          mejor acoplamiento.
-        </p>
-
-        <br>
-        <p class="h5 fw-bold text-pSecondary text-body-pSecondary">
-          Nota
-        </p>
-        <p class="text-pSecondary">
-          Solo se permite utlizar un número máximo de piezas al mismo tiempo, por esta razón, al moverse sobre el escenario se van tomando nuevas piezas de un "pool" general o 
-          se mofican las texturas para poder reutilizarlas.
-        </p>
-        <div id="carouselExampleCaptions" class="carousel slide mx-auto d-block" style="width: 60%;">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
-          </div>
-
-          <br>
-          <br>
-
-          <div class="carousel-inner border rounded-4">
-            <div class="carousel-item active">
-              <img src="../img/WgTop.png" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <!-- <h5>First slide label</h5>
-                <p>Some representative placeholder content for the first slide.</p> -->
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="../img/WgNavigationPath.png" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <!-- <h5>Second slide label</h5>
-                <p>Some representative placeholder content for the second slide.</p> -->
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="../img/WgPieces.png" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <!-- <h5>Third slide label</h5>
-                <p>Some representative placeholder content for the third slide.</p> -->
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="../img/WgClose.png" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <!-- <p>Demostración en escenario grande.</p> -->
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="../img/WgCharPath.png" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <!-- <p>Demostración en escenario grande.</p> -->
-              </div>
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </div>
-
-
-      <!-- <div class="b-example-divider"></div> -->
-
-      <div class="container">
-        <footer class="py-4  myFooter border-0">
-          <ul class="nav justify-content-center  pb-3 mb-1">
-            <li class="ms-3as">
-              <a class="text-body-secondary" href="https://www.linkedin.com/in/david-santoyo-herrera-59a0b020a">
-                <img src="../img/LinkedIn_logo.png" height="25px" width="25px"></img>
-              </a>
-            </li>
-            <li class="ms-3">
-              <a class="text-body-secondary" href="https://burmuruk.itch.io">
-                <img src="../img/Itch.io_logo.svg.png" height="25px" width="90px"></img>
-              </a>
-            </li>
-          </ul>
-          <hr class="border border-pSecondary border-2" style="width: 100%;">
-          <p class="text-center text-pSecondary">santoyo.herrera.david@gmail.com
-            <br>
-            +52 5523291197
-          </p>
-        </footer>
-      </div>
-
-      <div class="offcanvas offcanvas-top bg-pLight" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
-        <div class="offcanvas-header">
-          <h4 class="offcanvas-title text-pSecondary" id="offcanvasTopLabel">Projectos</h5>
-          
-          <!-- <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
-        </div>
-        <div class="offcanvas-body d-flex align-items-start">
-          <a class="card mt-2 text-decoration-none mx-4" style="max-width: 450px;" href="../pages/navMesh.html">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="../img/NmDCFar1.png" alt="..." class="img-fluid rounded-start">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Navegación</h5>
-                  <p class="card-text">Herramienta para navegación en entornos 3D.</p>
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <a class="card mt-2 text-decoration-none" style="max-width: 450px;" href="../pages/theWay.html">
-            <div class="row g-0 ">
-              <div class="col-md-4">
-                <img src="../img/Tw1.png" alt="..." class="img-fluid rounded-start">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">The Way</h5>
-                  <p class="card-text">Videojuego 2D y herramienta para generación de niveles.</p>
-                </div>
-              </div>
-            </div>
-          </a>
-          </div>
-        </div>
-      </div>
-
-    </main>
-  </body>
+<article class="project-body" id="detalle">
+<h2>Descripción</h2>
+<p>Herramienta que permite generar mundos procedurales mediante piezas modulares.</p>
+<h2>Funcionamiento</h2>
+<h3>Sistema procedural</h3>
+<p>Desde el editor de Unity es posible establecer probabilidades de que piezas pueden ir juntas. De igual manera, se pueden estableceer zonas (conjunto de piezas) con una serie de estructuras u otros elementos que se pueden encontrar ahí. La forma y el tamaño de las zonas también pueden ser modificados.</p>
+<h3>Caminos y estructuras</h3>
+<p>Estos dos elementos se dejaron fuera del sistema para ser colocados manualmente. Solo se pueden colocar estas piezas si la relación estre ambas fué definida en el inspector. Al ponerla, se analizan las piezas de su al rededor para definir si es necesario cambiarla, rotarla o modificarla para obtener un mejor acoplamiento.</p>
+<h2>Nota</h2>
+<p>Solo se permite utlizar un número máximo de piezas al mismo tiempo, por esta razón, al moverse sobre el escenario se van tomando nuevas piezas de un "pool" general o se mofican las texturas para poder reutilizarlas.</p>
+<!-- TODO: Confirmar estado actual, autoría individual y versiones de las tecnologías. -->
+<h2 id="galeria">Imágenes del proyecto</h2>
+<p>Selecciona una captura para verla en su resolución original.</p>
+<div class="gallery">
+<figure>
+<a aria-label="Ampliar: Vista superior del mundo generado" href="../img/WgTop.png">
+<img alt="Vista superior del mundo generado" decoding="async" height="915" loading="lazy" src="../img/optimized/WgTop.webp" width="1440"/>
+</a>
+<figcaption>01 / Vista superior del mundo generado</figcaption>
+</figure>
+<figure>
+<a aria-label="Ampliar: Caminos en el escenario" href="../img/WgNavigationPath.png">
+<img alt="Caminos en el escenario" decoding="async" height="976" loading="lazy" src="../img/optimized/WgNavigationPath.webp" width="1440"/>
+</a>
+<figcaption>02 / Caminos en el escenario</figcaption>
+</figure>
+<figure>
+<a aria-label="Ampliar: Piezas modulares del terreno" href="../img/WgPieces.png">
+<img alt="Piezas modulares del terreno" decoding="async" height="863" loading="lazy" src="../img/optimized/WgPieces.webp" width="1440"/>
+</a>
+<figcaption>03 / Piezas modulares del terreno</figcaption>
+</figure>
+<figure>
+<a aria-label="Ampliar: Detalle del terreno generado" href="../img/WgClose.png">
+<img alt="Detalle del terreno generado" decoding="async" height="758" loading="lazy" src="../img/optimized/WgClose.webp" width="1440"/>
+</a>
+<figcaption>04 / Detalle del terreno generado</figcaption>
+</figure>
+<figure>
+<a aria-label="Ampliar: Recorrido del personaje" href="../img/WgCharPath.png">
+<img alt="Recorrido del personaje" decoding="async" height="806" loading="lazy" src="../img/optimized/WgCharPath.webp" width="1440"/>
+</a>
+<figcaption>05 / Recorrido del personaje</figcaption>
+</figure>
+</div>
+</article>
+</div>
+<section aria-labelledby="contact-title" class="contact section" id="contacto">
+<div>
+<h2 id="contact-title">Hablemos de videojuegos.</h2>
+<a class="email" href="mailto:santoyo.herrera.david@gmail.com">santoyo.herrera.david@gmail.com</a>
+</div>
+<div class="contact-links">
+<a href="https://www.linkedin.com/in/david-santoyo-herrera-59a0b020a"><img alt="" aria-hidden="true" height="20" src="../img/LinkedIn_logo.png" width="20"/>LinkedIn ↗</a>
+<a href="https://burmuruk.itch.io"><span aria-hidden="true" class="social-icon itch-icon"></span>itch.io ↗</a>
+<a href="tel:+525523291197">+52 55 2329 1197</a>
+</div>
+</section>
+<footer class="site-footer">
+<span>David Santoyo Herrera</span>
+<span>Gameplay · Sistemas · Herramientas</span>
+<a href="#inicio">Volver arriba ↑</a>
+</footer>
+</main>
+</body>
 </html>

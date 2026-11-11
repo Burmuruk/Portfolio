@@ -1,254 +1,120 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Navegación</title>
-    <link href="../css/main.min.css" rel="stylesheet" >
-    <link href="../css/heroes.css" rel="stylesheet">
-    <link href="../css/breadcrumbs.css" rel="stylesheet">
+<!DOCTYPE html>
 
-    <style>
-      .b-example-divider {
-        width: 100%;
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Sistemas de navegación | David Santoyo Herrera</title>
+<meta content="Navegación 3D con A*, Dijkstra y búsqueda de rutas mediante métodos asíncronos." name="description"/>
+<script src="../scripts/theme.js">
+</script>
+<link href="../css/site.css" rel="stylesheet"/>
+<script defer="" src="../scripts/translations.js"></script><script defer="" src="../scripts/site.js"></script></head>
+<body id="inicio">
+<a class="skip" href="#main">Saltar al contenido</a>
+<header class="site-header wrap">
+<a class="brand" href="../index.html">DAVID SANTOYO<span>.</span>
+</a>
+<nav aria-label="Navegación principal" class="site-nav">
+<a href="../index.html#inicio">Inicio</a>
+<a href="../index.html#projectsSection">Proyectos</a>
+<a href="../index.html#DemoReelSection">Demo Reel</a>
+<a data-cv="" data-root="../" href="../documents/Curriculum.pdf">CV</a>
+<a href="../index.html#contacto">Contacto</a>
+<button aria-label="Switch to English" class="language-toggle" data-language-toggle="" lang="en" type="button">EN</button><button aria-label="Cambiar tema" aria-pressed="false" class="theme-toggle" data-theme-toggle="">☾</button>
+</nav>
+</header>
+<main class="wrap" id="main">
+<header class="project-header">
+<p class="breadcrumb">
+<a href="../index.html#projectsSection">← Todos los proyectos</a>
+</p>
+<p class="eyebrow">Inteligencia artificial</p>
+<h1>Sistemas de navegación</h1>
+<p class="project-intro">Navegación 3D con A*, Dijkstra y búsqueda de rutas mediante métodos asíncronos.</p>
+<div class="tags">
+<span>Unity</span>
+<span>C#</span>
+<span>A*</span>
+</div>
+</header>
+<div class="project-layout"><details class="project-switcher" data-project-switcher="" open=""><summary>☰ Proyectos</summary><nav aria-label="Otros proyectos" class="project-menu"><a href="RPGStarterTemplate.html"><img alt="" aria-hidden="true" height="44" loading="lazy" src="../img/optimized/RPGProfile.webp" width="60"/><span>RPG Starter Template</span></a><a aria-current="page" href="navMesh.html"><img alt="" aria-hidden="true" height="44" loading="lazy" src="../img/optimized/NmDCFar1.webp" width="60"/><span>Sistemas de navegación</span></a><a href="proceduralWorld.html"><img alt="" aria-hidden="true" height="44" loading="lazy" src="../img/optimized/WgClose1.webp" width="60"/><span>Terreno procedural</span></a><a href="theWay.html"><img alt="" aria-hidden="true" height="44" loading="lazy" src="../img/optimized/Tw1.webp" width="60"/><span>The Way</span></a></nav><aside aria-label="En esta página" class="project-outline">
+<a href="#detalle">Descripción y desarrollo</a>
+<a href="#galeria">Imágenes del proyecto</a>
+<a href="../index.html#DemoReelSection">Ver demo reel ↗</a>
+</aside></details>
 
-      .navbar {
-        margin-bottom: 20px;
-      }
-
-      .myFooter{
-        background-color: rgb(242, 240, 234);
-      }
-
-      .myFooter * {
-        background-color: rgb(242, 240, 234);
-      }
-
-    </style>
-  </head>
-  <body class="bg-pLight">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-    <nav class="navbar navbar-expand-lg navbar-pLight bg-pLight" aria-label="Tenth navbar example">
-      <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-  
-        <div class="collapse navbar-collapse justify-content-md-left" id="navbarsExample08">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active text-pSecondary fs-4" aria-current="page" href="../index.html">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-pSecondary fs-4" data-bs-toggle="offcanvas" href="#offcanvasTop" role="button">Projectos</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-      <div class="container my-5 d-flex justify-content-center bg-pLight">
-        <div class="d-flex align-items-center" style="width: 20%">
-          <hr class="border border-pSecondary border-2" style="width: 100%;">
-        </div>
-        <p class="lead py-5 fw-bold fs-1 text-center text-pSecondary" style="width: 50%;">
-          Navegación
-        </p>
-        <div class="d-flex align-items-center" style="width: 20%">
-          <hr class="border border-pSecondary border-2" style="width: 100%;">
-        </div>
-      </div>
-
-      <div class="container my-5 bg-pLight">
-        <p class="h5 fw-bold text-pSecondary text-body-pSecondary">
-          Descripción
-        </p>
-        
-        <p class="text-pSecondary">
-          Herramienta para navegación en escenarios 3d. Crea una malla de navegación en la zona indicada por la que
-          los personajes pueden navegar libremente sin tener colisiones con objetos de la capa indicada. Implementa A*, Dijkstra y 
-          tiene una interfaz genérica para añadir más algoritmos.
-        </p>
-
-
-        <br>
-        <p class="h5 fw-bold text-pSecondary text-body-pSecondary">
-          Estado actual
-        </p>
-        <p class="text-pSecondary">
-          En desarrollo
-        </p>
-
-        <br>
-        <p class="h5 fw-bold text-pSecondary text-body-pSecondary">
-          Funcionamiento
-        </p>
-        <p class="h6 fw-semibold text-pSecondary">
-          Malla
-        </p>
-        <p class="text-pSecondary">
-          Se utilizan varios raycast para detectar los objetos en el área de acuerdo a las dimensiones del jugador, el ángulo de
-          inclinación de las superficies y la densidad de esta. Los resultados se guardan como arreglo dentro del Scriptable 
-          Object inidicado.
-        </p>
-
-        <br>
-        <p class="h6 fw-semibold text-pSecondary">
-          Movimiento
-        </p>
-        <p class="text-pSecondary">
-          Mediante métodos asíncronos y busquedas binarias, se ejecutan los algoritmos de busqueda y se guardan las rutas de movimiento
-          en IEnumerables para una lectura fácil.
-        </p>
-        <p class="text-pSecondary">
-          Cuando se quiere mover a un punto en específico, hay dos modos de movimiento, por aproximación y por precisión, donde el primero se encarga de verificar que el destino final esté
-          dentro del área transitable y si no, se regresa la posición más cercana. El segundo trata de conseguir el punto de la malla más cercano.
-        </p>
-
-        
-        <br>
-        <p class="h5 fw-bold text-pSecondary text-body-pSecondary">
-          Tiempo de creación de malla
-        </p>
-        <p class="text-pSecondary">
-          Mallas de navegación con 1,000,000 de nodos se generan en 12s.
-        </p>
-
-        <br>
-        <p class="h5 fw-bold text-pSecondary text-body-pSecondary">
-          Nota
-        </p>
-        <p class="text-pSecondary">
-          El resultado gráfico de la malla es opcional, pero para mostrarlo se utilizan gameobjects y "OnDrawGizmos" para hacerlo posible. Este
-          proceso es muy tardado por lo que se recomienda usar solo en áreas pequeñas.
-        </p>
-        <div id="carouselExampleCaptions" class="carousel slide mx-auto d-block" style="width: 60%;">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
-          </div>
-
-          <br>
-          <br>
-
-          <div class="carousel-inner border rounded-4">
-            <div class="carousel-item active">
-              <img src="../img/NmDCFar.png" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <!-- <h5>First slide label</h5>
-                <p>Some representative placeholder content for the first slide.</p> -->
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="../img/NmDCMid.png" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <!-- <h5>Second slide label</h5>
-                <p>Some representative placeholder content for the second slide.</p> -->
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="../img/NmDCClose.png" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <!-- <h5>Third slide label</h5>
-                <p>Some representative placeholder content for the third slide.</p> -->
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="../img/NmBcTDCreated.png" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <!-- <p>Demostración en escenario grande.</p> -->
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="../img/NmBcTD.png" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <!-- <p>Demostración en escenario grande.</p> -->
-              </div>
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </div>
-
-
-      <!-- <div class="b-example-divider"></div> -->
-
-      <div class="container">
-        <footer class="py-4  myFooter border-0">
-          <ul class="nav justify-content-center  pb-3 mb-1">
-            <li class="ms-3as">
-              <a class="text-body-secondary" href="https://www.linkedin.com/in/david-santoyo-herrera-59a0b020a">
-                <img src="../img/LinkedIn_logo.png" height="25px" width="25px"></img>
-              </a>
-            </li>
-            <li class="ms-3">
-              <a class="text-body-secondary" href="https://burmuruk.itch.io">
-                <img src="../img/Itch.io_logo.svg.png" height="25px" width="90px"></img>
-              </a>
-            </li>
-          </ul>
-          <hr class="border border-pSecondary border-2" style="width: 100%;">
-          <p class="text-center text-pSecondary">santoyo.herrera.david@gmail.com
-            <br>
-            +52 5523291197
-          </p>
-        </footer>
-      </div>
-
-      <div class="offcanvas offcanvas-top bg-pLight" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
-        <div class="offcanvas-header">
-          <h4 class="offcanvas-title text-pSecondary" id="offcanvasTopLabel">Projectos</h5>
-          
-          <!-- <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
-        </div>
-        <div class="offcanvas-body d-flex align-items-start">
-          <a class="card mt-2 text-decoration-none mx-4" style="max-width: 450px;" href="../pages/proceduralWorld.html">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="../img/WgClose1.png" alt="..." class="img-fluid rounded-start">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Mundo procedural</h5>
-                  <p class="card-text">Herramienta para general mundo procedural con piezas modulares.</p>
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <a class="card mt-2 text-decoration-none" style="max-width: 450px;" href="../pages/theWay.html">
-            <div class="row g-0 ">
-              <div class="col-md-4">
-                <img src="../img/Tw1.png" alt="..." class="img-fluid rounded-start">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">The Way</h5>
-                  <p class="card-text">Videojuego 2D y herramienta para generación de niveles.</p>
-                </div>
-              </div>
-            </div>
-          </a>
-          </div>
-        </div>
-      </div>
-
-    </main>
-  </body>
+<article class="project-body" id="detalle">
+<h2>Rol</h2>
+<p>Game Developer</p>
+<h2>Descripción</h2>
+<p>Herramienta para navegación en escenarios 3d. Crea una malla de navegación en la zona indicada por la que los personajes pueden navegar libremente sin tener colisiones con objetos de la capa indicada. Implementa A*, Dijkstra y tiene una interfaz genérica para añadir más algoritmos.</p>
+<h2>Estado actual</h2>
+<p>En desarrollo</p>
+<h2>Funcionamiento</h2>
+<h3>Malla</h3>
+<p>Se utilizan varios raycast para detectar los objetos en el área de acuerdo a las dimensiones del jugador, el ángulo de inclinación de las superficies y la densidad de esta. Los resultados se guardan en un archivo de texto en StreamingAssets para incluir en la build del proyecto.</p>
+<h3>Movimiento</h3>
+<p>Mediante métodos asíncronos y busquedas binarias, se ejecutan los algoritmos de busqueda y se guardan las rutas de movimiento en IEnumerables para una lectura fácil.</p>
+<p>Cuando se quiere mover a un punto en específico, hay dos modos de movimiento, por aproximación y por precisión, donde el primero se encarga de verificar que el destino final esté dentro del área transitable y si no, se regresa la posición más cercana. El segundo trata de conseguir el punto de la malla más cercano.</p>
+<h2>Tiempo de creación de malla</h2>
+<p>Mallas de navegación con 1,000,000 de nodos se generan en 12s.</p>
+<h2>Nota</h2>
+<p>El resultado gráfico de la malla es opcional, pero para mostrarlo se utilizan gameobjects y "OnDrawGizmos" para hacerlo posible. Este proceso es muy tardado por lo que se recomienda usar solo en áreas pequeñas.</p>
+<!-- TODO: Confirmar estado actual, autoría individual y versiones de las tecnologías. -->
+<!-- TODO: Documentar hardware y condiciones de la medición original de 1,000,000 de nodos en 12 s. -->
+<h2 id="galeria">Imágenes del proyecto</h2>
+<p>Selecciona una captura para verla en su resolución original.</p>
+<div class="gallery">
+<figure>
+<a aria-label="Ampliar: Vista general de la malla de navegación" href="../img/NmDCFar.png">
+<img alt="Vista general de la malla de navegación" decoding="async" height="741" loading="lazy" src="../img/optimized/NmDCFar.webp" width="1204"/>
+</a>
+<figcaption>01 / Vista general de la malla de navegación</figcaption>
+</figure>
+<figure>
+<a aria-label="Ampliar: Distribución de nodos sobre el escenario" href="../img/NmDCMid.png">
+<img alt="Distribución de nodos sobre el escenario" decoding="async" height="800" loading="lazy" src="../img/optimized/NmDCMid.webp" width="1440"/>
+</a>
+<figcaption>02 / Distribución de nodos sobre el escenario</figcaption>
+</figure>
+<figure>
+<a aria-label="Ampliar: Detalle de los nodos navegables" href="../img/NmDCClose.png">
+<img alt="Detalle de los nodos navegables" decoding="async" height="799" loading="lazy" src="../img/optimized/NmDCClose.webp" width="1440"/>
+</a>
+<figcaption>03 / Detalle de los nodos navegables</figcaption>
+</figure>
+<figure>
+<a aria-label="Ampliar: Malla generada en un escenario grande" href="../img/NmBcTDCreated.png">
+<img alt="Malla generada en un escenario grande" decoding="async" height="531" loading="lazy" src="../img/optimized/NmBcTDCreated.webp" width="1392"/>
+</a>
+<figcaption>04 / Malla generada en un escenario grande</figcaption>
+</figure>
+<figure>
+<a aria-label="Ampliar: Escenario de prueba de navegación" href="../img/NmBcTD.png">
+<img alt="Escenario de prueba de navegación" decoding="async" height="532" loading="lazy" src="../img/optimized/NmBcTD.webp" width="1398"/>
+</a>
+<figcaption>05 / Escenario de prueba de navegación</figcaption>
+</figure>
+</div>
+</article>
+</div>
+<section aria-labelledby="contact-title" class="contact section" id="contacto">
+<div>
+<h2 id="contact-title">Hablemos de videojuegos.</h2>
+<a class="email" href="mailto:santoyo.herrera.david@gmail.com">santoyo.herrera.david@gmail.com</a>
+</div>
+<div class="contact-links">
+<a href="https://www.linkedin.com/in/david-santoyo-herrera-59a0b020a"><img alt="" aria-hidden="true" height="20" src="../img/LinkedIn_logo.png" width="20"/>LinkedIn ↗</a>
+<a href="https://burmuruk.itch.io"><span aria-hidden="true" class="social-icon itch-icon"></span>itch.io ↗</a>
+<a href="tel:+525523291197">+52 55 2329 1197</a>
+</div>
+</section>
+<footer class="site-footer">
+<span>David Santoyo Herrera</span>
+<span>Gameplay · Sistemas · Herramientas</span>
+<a href="#inicio">Volver arriba ↑</a>
+</footer>
+</main>
+</body>
 </html>
