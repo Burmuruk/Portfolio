@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "python -m http.server 8000 --bind 127.0.0.1",
-    "test": "python scripts/check.py && node scripts/theme.test.cjs && node scripts/site.test.cjs"
+    "test": "python scripts/check.py && node scripts/theme.test.cjs && node scripts/site.test.cjs && node scripts/chapters.test.cjs"
   },
   "author": "",
   "license": "ISC",

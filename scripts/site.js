@@ -28,9 +28,9 @@
     if (normalize(node.nodeValue)) texts.push([node, node.nodeValue]);
   }
   const attributes = [];
-  document.querySelectorAll('[alt], [aria-label], meta[name="description"]').forEach(element => {
+  document.querySelectorAll('[alt], [aria-label], [title], meta[name="description"]').forEach(element => {
     if (element.matches('[data-theme-toggle], [data-language-toggle]')) return;
-    for (const name of ['alt', 'aria-label', 'content']) {
+    for (const name of ['alt', 'aria-label', 'content', 'title']) {
       if (element.hasAttribute(name)) attributes.push([element, name, element.getAttribute(name)]);
     }
   });
@@ -73,6 +73,12 @@
     const resetPanel = () => { panel.open = !mobile.matches; };
     resetPanel();
     mobile.addEventListener('change', resetPanel);
+    document.addEventListener('pointerdown', event => {
+      if (mobile.matches && panel.open && !panel.contains(event.target)) panel.open = false;
+    });
+    panel.addEventListener('click', event => {
+      if (mobile.matches && event.target.closest('a')) panel.open = false;
+    });
     panel.addEventListener('keydown', event => {
       if (event.key === 'Escape' && panel.open) {
         panel.open = false;

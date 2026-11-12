@@ -14,11 +14,13 @@ Abrir http://127.0.0.1:8000. También se puede abrir `index.html` directamente, 
 
 ## Estructura y mantenimiento
 
-- `index.html`: presentación, demo reel, tres destacados, The Way desplegable, perfil y contacto.
+- `index.html`: presentación, demo reel, índice expandible, tres destacados, navegación a todos los proyectos, perfil y contacto.
 - `pages/*.html`: las cuatro rutas originales, con sus explicaciones técnicas y galerías ampliables.
 - `css/site.css`: diseño responsive y variables de color de ambos temas.
 - `scripts/theme.js`: preferencia del sistema, cambio manual y persistencia en localStorage. Se carga antes del CSS para evitar destellos.
 - `scripts/site.js`: idioma, selección del CV, panel lateral y rotación de capturas al pasar el mouse.
+- `scripts/portfolio-config.js`: capítulos, tiempos y enlace del repositorio RPG.
+- `scripts/chapters.js`: fichas de capítulos y saltos temporales en el reproductor HTML5 existente.
 - `scripts/translations.js`: traducciones al inglés, incluidos textos técnicos, títulos y etiquetas accesibles. El español permanece en el HTML.
 - `img/optimized/`: versiones WebP de los recursos existentes. Los enlaces de las galerías conservan los originales de `img/`.
 - `Videos/DemoReel.mp4` y `documents/Curriculum.pdf`: recursos originales sin cambios. El video se descarga al reproducirlo, sin autoplay.
@@ -39,11 +41,12 @@ Si npm no está disponible, ejecutar las mismas comprobaciones directamente:
 python scripts/check.py
 node scripts/theme.test.cjs
 node scripts/site.test.cjs
+node scripts/chapters.test.cjs
 ```
 
 Verifica rutas locales, fragmentos, IDs, imágenes, configuración del video y comportamiento del tema (sistema, elección manual, persistencia y almacenamiento bloqueado).
 
-Revisión manual recomendada: tamaños de 360, 768 y 1440 px; ambos temas; navegación con Tab; reproducción del reel; apertura del PDF; expansión de The Way y ampliación de capturas. Se verificaron en navegador el cambio ES/EN, su persistencia al recargar y navegar, enlaces del CV, panel plegable, navegación entre proyectos y layout móvil sin desbordamiento horizontal. Las pruebas de JavaScript cubren también la rotación de imágenes y la preferencia de movimiento reducido.
+Se revisaron en navegador escritorio (1440 px) y móvil (390 px): ES/EN, ambos temas, expansión de capítulos, navegación entre proyectos y panel superpuesto móvil sin desbordamiento horizontal. Al cerrar el panel en escritorio el contenido recupera todo el ancho; en móvil abrirlo no desplaza el contenido. Las pruebas de JavaScript cubren persistencia, rotación de imágenes, movimiento reducido y saltos temporales con un reproductor simulado (carga pendiente, segundo cero, clics repetidos, límites y reproducción rechazada). Los tiempos reales todavía no están configurados.
 
 ## Idioma y CV
 
@@ -52,11 +55,23 @@ La primera visita usa el idioma principal del navegador: español si empieza con
 - Español: `documents/Curriculum.pdf`.
 - Inglés: **reemplazar `documents/Curriculum-en.pdf` por el PDF traducido**, manteniendo exactamente ese nombre. Por ahora es una copia del documento español, no una traducción.
 
-Las cuatro páginas de proyecto incluyen un panel lateral nativo `details/summary`: abierto al entrar en escritorio y cerrado en móvil (hasta 650 px). El proyecto actual queda resaltado; Escape cierra el panel y devuelve el foco al control. Al cambiar de breakpoint se restablece el estado correspondiente.
+Las cuatro páginas incluyen un panel lateral nativo `details/summary`, alineado con el encabezado del proyecto: abierto al entrar en escritorio y cerrado en móvil (hasta 650 px). En móvil se superpone al contenido y se cierra al pulsar fuera o elegir un enlace. Escape lo cierra y devuelve el foco al control. Al cambiar de breakpoint se restablece el estado correspondiente.
 
 Las tarjetas de inicio definen sus imágenes en `data-preview`. Cambian tras un segundo de hover y luego cada 1,6 segundos. Al salir vuelve la portada. Se desactiva en dispositivos sin hover y con `prefers-reduced-motion`; las imágenes adicionales se cargan bajo demanda.
 
-El índice del demo reel con enlaces por minuto y la marca Burmuruk se presentaron como propuesta visual; no están implementados. Falta confirmar proyectos y tiempos del video. Se retiró el enlace redundante «Todos los proyectos» junto al título de destacados; The Way sigue accesible mediante su desplegable.
+## Configurar el índice del demo reel y el repositorio RPG
+
+Editar **`scripts/portfolio-config.js`**:
+
+1. En `chapters`, confirmar cuáles proyectos aparecen en el video. Eliminar de esta lista los que no aparezcan (sus páginas y navegación se conservan). Cada entrada contiene `id`, `title.es`, `title.en`, `image`, `startSeconds` y `href`.
+2. Cambiar `startSeconds: null` por el segundo real de inicio. `null` muestra «Tiempo pendiente» y desactiva «Ver momento»; `0` significa el inicio real del video. No se utilizan los tiempos ilustrativos de la imagen de referencia.
+3. Cambiar `reelSelectionConfirmed` a `true` después de verificar la selección. Mientras sea `false`, se muestra «Selección y tiempos por confirmar».
+4. `initialChapterCount` determina cuántas fichas aparecen antes de pulsar «Ver todos». No se muestra ese botón si no hay capítulos adicionales. En móvil se permite desplazamiento horizontal táctil, sin capturar la rueda vertical.
+5. Asignar a **`rpgRepositoryUrl`** la URL HTTPS real. Por ahora es `null` porque no había un enlace verificado. Al configurarla aparece «Repositorio y documentación» en RPG Starter Template.
+
+Los saltos ya están conectados al único `<video>` existente: esperan metadatos si hace falta, ajustan `currentTime`, enfocan el reproductor y llaman a `play()`. No navegan ni recargan la página. Si el navegador rechaza la reproducción, se ofrece un mensaje para usar el control del video. No hace falta conectar otro reproductor.
+
+Se utiliza BURMURUK. en los encabezados y David Santoyo Herrera en la presentación y datos profesionales. «Descargar CV» es la acción principal del hero, junto a LinkedIn e itch.io. Solo hay tres tarjetas destacadas; el directorio compacto y los paneles laterales conservan el acceso a The Way independientemente del índice del reel.
 
 ## Información pendiente
 
@@ -66,4 +81,4 @@ El índice del demo reel con enlaces por minuto y la marca Burmuruk se presentar
 - Añadir subtítulos o transcripción del reel si contiene voz; no se generó una transcripción ficticia.
 - El enlace original de itch.io respondió. LinkedIn no pudo verificarse mediante la herramienta de consulta; se conserva la URL original. No se añadió un perfil de GitHub porque no existía un enlace de contacto verificado en el sitio.
 
-Para publicar, conservar la configuración actual de GitHub Pages y enviar los cambios a la rama que utiliza. Este rediseño queda en el repositorio local; no se ha publicado.
+GitHub Pages publica desde `Publish`. Esta actualización queda localmente en `main`, sin push ni publicación automática.
