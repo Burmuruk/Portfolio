@@ -1,7 +1,10 @@
 (() => {
   const normalize = text => text.replace(/\s+/g, ' ').trim();
-  let language;
-  try { language = localStorage.getItem('portfolio-language'); } catch (_) { /* Optional storage. */ }
+  const pageUrl = new URL(window.location.href);
+  let language = pageUrl.searchParams.get('lang');
+  if (!['es', 'en'].includes(language)) {
+    try { language = localStorage.getItem('portfolio-language'); } catch (_) { /* Optional storage. */ }
+  }
   if (!['es', 'en'].includes(language)) {
     const preferred = navigator.languages?.[0] || navigator.language || 'en';
     language = preferred.toLowerCase().startsWith('es') ? 'es' : 'en';
@@ -18,6 +21,36 @@
     if (text.endsWith(' | David Santoyo Herrera')) return translate(text.split(' | ')[0]) + ' | David Santoyo Herrera';
     return text;
   }
+
+  const panel = document.querySelector('[data-project-switcher]');
+  const menu = panel?.querySelector('.project-menu');
+  if (menu) {
+    for (const [filename, project] of Object.entries(window.portfolioConfig.projectThumbnails)) {
+      const link = document.createElement('a');
+      link.href = filename;
+      if (pageUrl.pathname.endsWith('/' + filename)) link.setAttribute('aria-current', 'page');
+      const image = document.createElement('img');
+      image.alt = '';
+      image.setAttribute('aria-hidden', 'true');
+      image.width = 60;
+      image.height = 44;
+      image.loading = 'lazy';
+      image.src = '../' + project.image;
+      const title = document.createElement('span');
+      title.textContent = project.title;
+      link.append(image, title);
+      menu.append(link);
+    }
+  }
+
+  const pageLinks = [...document.querySelectorAll('a[href]')].flatMap(link => {
+    const href = link.getAttribute('href');
+    if (!href || href.startsWith('#')) return [];
+    const destination = new URL(href, pageUrl);
+    if (destination.protocol !== pageUrl.protocol || destination.origin !== pageUrl.origin ||
+        !/\/(?:[^/]+\.html)?$/i.test(destination.pathname)) return [];
+    return [[link, destination]];
+  });
 
   // Preserve text nodes, links and icons instead of replacing element HTML.
   const texts = [];
@@ -43,6 +76,10 @@
   }
   function applyLanguage() {
     document.documentElement.lang = language;
+    pageLinks.forEach(([link, destination]) => {
+      destination.searchParams.set('lang', language);
+      link.href = destination.href;
+    });
     texts.forEach(([node, original]) => {
       node.nodeValue = original.replace(/\S(?:[\s\S]*\S)?/, translate(normalize(original)));
     });
@@ -59,7 +96,9 @@
   }
   languageButton.addEventListener('click', () => {
     language = language === 'es' ? 'en' : 'es';
-    try { localStorage.setItem('portfolio-language', language); } catch (_) { /* Session choice still works. */ }
+    try { localStorage.setItem('portfolio-language', language); } catch (_) { /* Page links carry the choice. */ }
+    pageUrl.searchParams.set('lang', language);
+    try { window.history.replaceState(window.history.state, '', pageUrl); } catch (_) { /* Page links still carry the choice. */ }
     applyLanguage();
   });
   new MutationObserver(updateThemeLabel).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
@@ -67,23 +106,7 @@
   document.querySelector('[data-theme-toggle]').addEventListener('click', updateThemeLabel);
   applyLanguage();
 
-  const panel = document.querySelector('[data-project-switcher]');
   if (panel) {
-    const thumbnails = window.portfolioConfig?.projectThumbnails;
-    if (thumbnails) {
-      panel.querySelectorAll('.project-menu a').forEach(link => {
-        const source = thumbnails[link.getAttribute('href')];
-        if (!source) return;
-        const image = document.createElement('img');
-        image.alt = '';
-        image.setAttribute('aria-hidden', 'true');
-        image.width = 60;
-        image.height = 44;
-        image.loading = 'lazy';
-        image.src = '../' + source;
-        link.prepend(image);
-      });
-    }
     const mobile = matchMedia('(max-width: 650px)');
     const resetPanel = () => { panel.open = !mobile.matches; };
     resetPanel();

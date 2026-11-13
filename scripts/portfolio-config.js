@@ -1,12 +1,13 @@
 // Paths are relative to index.html. Confirm membership before publishing this index.
 window.portfolioConfig = {
-  // Project menu thumbnails, keyed by the linked HTML filename.
+  // Each entry adds a link to the project menu. Titles use the Spanish translation keys.
   projectThumbnails: {
-    'RPGStarterTemplate.html': 'img/optimized/RPGProfile.webp',
-    'MyVoxelShop.html': 'img/mvsStartCut.jpg',
-    'navMesh.html': 'img/optimized/NmDCFar1.webp',
-    'proceduralWorld.html': 'img/optimized/WgClose1.webp',
-    'theWay.html': 'img/optimized/Tw1.webp',
+    'RPGStarterTemplate.html': { title: 'RPG Starter Template', image: 'img/optimized/RPGProfile.webp' },
+    'MyVoxelShop.html': { title: 'MyVoxelShop', image: 'img/mvsStartCut.jpg' },
+    'navMesh.html': { title: 'Sistemas de navegación', image: 'img/optimized/NmDCFar1.webp' },
+    'proceduralWorld.html': { title: 'Terreno procedural', image: 'img/optimized/WgClose1.webp' },
+    'theWay.html': { title: 'The Way', image: 'img/optimized/Tw1.webp' },
+    'shooterUnreal.html': { title: 'Prototipo de acción y sigilo', image: 'img/enemigosUE5.png' },
   },
   reelSelectionConfirmed: false,
   initialChapterCount: 3,
