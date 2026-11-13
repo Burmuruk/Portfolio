@@ -69,6 +69,21 @@
 
   const panel = document.querySelector('[data-project-switcher]');
   if (panel) {
+    const thumbnails = window.portfolioConfig?.projectThumbnails;
+    if (thumbnails) {
+      panel.querySelectorAll('.project-menu a').forEach(link => {
+        const source = thumbnails[link.getAttribute('href')];
+        if (!source) return;
+        const image = document.createElement('img');
+        image.alt = '';
+        image.setAttribute('aria-hidden', 'true');
+        image.width = 60;
+        image.height = 44;
+        image.loading = 'lazy';
+        image.src = '../' + source;
+        link.prepend(image);
+      });
+    }
     const mobile = matchMedia('(max-width: 650px)');
     const resetPanel = () => { panel.open = !mobile.matches; };
     resetPanel();

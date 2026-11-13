@@ -94,7 +94,7 @@
       const url = new URL(config.myVoxelShopDemoUrl);
       if (url.protocol === 'https:') {
         const link = element('a', 'button', 'Descargar demo para Android ↗');
-        link.href = url.href; demo.append(link);
+        link.href = url.href; demo.replaceChildren(link);
       }
     } catch (_) { /* Await a valid public URL. */ }
   }
