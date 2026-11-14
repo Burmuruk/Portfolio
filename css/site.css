@@ -112,11 +112,12 @@ h3 { font-size: 18px; line-height: 1.35; letter-spacing: -.02em; margin-bottom: 
 .more-projects { margin-top: 22px; }
 .more-projects summary { width: fit-content; color: var(--muted); font-size: 13px; padding-block: 8px; }
 .more-projects .project-card { margin-top: 18px; max-width: 380px; }
-.about { display: grid; grid-template-columns: 1fr 1.3fr; gap: 60px; align-items: center; padding-block: 36px; }
+.about { display: grid; grid-template-columns: minmax(235px, 1fr) minmax(0, 3fr); gap: 36px; align-items: start; padding-block: 36px; }
 .about-heading { display: flex; gap: 22px; align-items: center; }
 .portrait { width: 76px; height: 76px; object-fit: cover; border-radius: 50%; border: 1px solid var(--line); }
-.about h2 { margin-bottom: 6px; }
-.about p { font-size: 14px; color: var(--muted); margin-bottom: 0; }
+.about-heading h2 { font-size: 14px; color: var(--muted); margin: 0; }
+.about-copy p { font-size: 14px; color: var(--muted); margin: 0; }
+.about-copy p + p { margin-top: 12px; }
 .contact { display: flex; justify-content: space-between; align-items: center; gap: 32px; padding-block: 36px; }
 .contact h2 { margin-bottom: 8px; }
 .email { font-size: clamp(14px, 2vw, 19px); color: var(--accent); overflow-wrap: anywhere; }

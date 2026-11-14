@@ -62,8 +62,8 @@ function setup({ saved, preferred = 'es-MX', mobile = false, reduced = false, bl
   assert.equal(app.document.documentElement.lang, 'es');
   app.languageButton.events.click();
   assert.equal(app.document.documentElement.lang, 'en');
-  assert.equal(app.text.nodeValue, '\n  Navigation systems  ');
-  assert.equal(app.alt.attributes.alt, 'Navigation systems — project preview');
+  assert.equal(app.text.nodeValue, '\n  Navigation system  ');
+  assert.equal(app.alt.attributes.alt, 'Navigation system — project preview');
   assert.equal(app.cv.href, '../documents/Curriculum-en.pdf');
   assert.equal(app.themeButton.attributes['aria-label'], 'Switch to light mode');
   assert.equal(app.storage['portfolio-language'], 'en');

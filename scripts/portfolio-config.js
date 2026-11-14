@@ -20,5 +20,5 @@ window.portfolioConfig = {
   ],
   // TODO: Real HTTPS repository URL; link stays hidden while null.
   rpgRepositoryUrl: 'https://github.com/Burmuruk/com.burmuruk.rpg-starter-template',
-  myVoxelShopDemoUrl: null // Set the public itch.io demo URL when published.
+  myVoxelShopDemoUrl: 'https://burmuruk.itch.io/myvoxelshop',
 };

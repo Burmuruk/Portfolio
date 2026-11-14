@@ -2,7 +2,8 @@
 window.portfolioEnglish = {
   'Plantilla extensible para desarrollar RPG en Unity, con sistemas de gameplay y herramientas de editor integradas.': 'An extensible RPG template for Unity with built-in gameplay systems and editor tools.',
   'Juego de gestión de una tienda de figuras, donde atiendes clientes, personalizas productos y expande tu negocio.': 'Run a figurine shop, serve customers, customize products and grow your business.',
-  'Me enfoco en programación de mecánicas, sistemas y herramientas de editor. Actualmente trabajo en un juego en Unity con HotFixGames. También tengo experiencia en el desarrollo de proyectos de realidad virtual y programación con Blueprints en Unreal Engine con Eternal Pulse Games, además de crear herramientas propias en Unity.': 'I focus on gameplay programming, systems and editor tools. I’m currently working on a Unity game with HotFixGames. At Eternal Pulse Games, I worked on virtual reality projects and programmed with Blueprints in Unreal Engine. I also build my own tools in Unity.',
+  'Estudié Desarrollo y Programación de Videojuegos y me enfoco en programación de sistemas, gameplay y herramientas de editor.': 'I studied game development and programming, and I focus on gameplay systems and editor tools.',
+  'Actualmente trabajo en un juego en Unity con HotFixGames. También tengo experiencia en el desarrollo de proyectos de realidad virtual y programación con Blueprints en Unreal Engine con Eternal Pulse Games, además de crear herramientas propias en Unity.': 'I’m currently working on a Unity game with HotFixGames. At Eternal Pulse Games, I worked on virtual reality projects and programmed with Blueprints in Unreal Engine. I also build my own tools in Unity.',
   'Unity · C# · Herramienta': 'Unity · C# · Tool',
   'Unity · C# · A* · Herramienta': 'Unity · C# · A* · Tool',
   'Android · PC · Juego': 'Android · PC · Game',
